@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Đăng nhập</title>
+
+	</head>
+	
+<body background="./image/banner.jpeg">
+<center>
+	<form name="FDK"  style="width:350px; background:#FFF; border-radius:10px; margin: 50px 30px 0 850px; border:3px solid;">
+	<div id="DK">
+    	<img src="../image/logo12.png" style="display: block; width:200px; color:#00F; font-size: 24px; padding-top: 20px;font-weight: bold;"/>
+		<div align="center" style="display: block; color:#F6C; font-size: 24px; padding-top: 20px;font-weight: bold; border-top:3px solid #000;">ĐĂNG NHẬP
+        </div><br>
+		<div style="margin-left: 30px;">
+
+			<lable><b>Email</b></lable>
+            <br />
+			<input type="text" size="40" style="height:35px" name="Email" id="Email" pattern="[a-z0-9._%+-] +@[a-z0-9.-]+\.[a-z]{2,}" placeholder="Nhập Email">
+            			<br />
+			<span id="EmailError" style="color:red;">Vui lòng kiểm tra lại Email!</span>
+
+			<br /><br />
+			<lable><b>Mật Khẩu</b></lable>
+			<br>
+			<input type="password" size="40" style="height:35px" name="Pass" id="Pass" placeholder="Nhập Password">
+             <br />
+
+			<span id="PassError" style="color:red;">Kiểm tra lại Pass phải từ 10 kí tự!</span>
+            <br />
+           
+			<center><a href="../index.html"><input type="button" size="40" value=" Đăng Nhập " style="height: 35px; background-color:#F6C; margin-top: 10px ;" onclick="KIEMTRADLNHAP();"></a></center><br>
+		</div>
+	</div>
+	</form>
+ </center>
+    <script>
+		function KIEMTRADLNHAP()
+		{
+			var flag =  true;
+			var Email = document.getElementById("Email").value.trim();
+			var EmailFormat =/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[z-zA-Z0-9-]+)*$/;
+			if (!EmailFormat.test(Email))
+			{
+				flag = false;
+				document.getElementById("EmailError").innerHTML="Vui lòng kiểm tra lại Email!";
+			}
+			
+			var Pass = document.getElementById("Pass").value.trim();
+			if (Pass == "" || Pass.length < 10 || Pass != RePass)
+			{
+				flag = false;
+				document.getElementById("PassError").innerHTML="Vui lòng kiểm tra lại Pass!";
+			}
+			
+		}
+		</script>
+
+</body>
+</html>
